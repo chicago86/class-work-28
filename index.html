@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ToDo List</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="description" content="" />
+    <link rel="icon" href="favicon.png" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <main>
+      <!-- BEGIN ba-container  -->
+      <div class="ba-container">
+        <div class="ba-todo-list">
+          <h3 class="ba-title">Add Item</h3>
+          <form class="ba-add-form" action="#" method="post">
+            <input
+              autofocus
+              required
+              id="new-task"
+              data-action="save"
+              type="text"
+              name="new-task"
+              placeholder="Enter your task for today"
+            />
+            <button type="submit">Add</button>
+          </form>
+          <h3 class="ba-title">ToDo</h3>
+          <ul class="ba-tasks-list" id="incompleted-list">
+            <script type="text/template" id="task-tmpl">
+              <li>
+              	<input type="checkbox" data-action="move">
+              	<input data-action="save" type="text" readonly value="{{task}}">
+              	<button data-action="edit">Edit</button>
+              <button data-action="delete">Delete</button>
+              </li>
+            </script>
+            <li>
+              <input type="checkbox" data-action="move" />
+              <input data-action="save" type="text" value="Drink Burbon" />
+              <button data-action="edit">Edit</button>
+              <button data-action="delete">Delete</button>
+            </li>
+          </ul>
+          <h3 class="ba-title">Completed</h3>
+          <ul class="ba-tasks-list" id="completed-list">
+            <li>
+              <input type="checkbox" checked data-action="move" />
+              <input
+                data-action="save"
+                type="text"
+                readonly
+                value="Drink Tequila"
+              />
+              <button data-action="edit">Edit</button>
+              <button data-action="delete">Delete</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- END ba-container -->
+    </main>
+    <script src="js/main.js"></script>
+  </body>
+</html>
